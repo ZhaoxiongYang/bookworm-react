@@ -10,7 +10,7 @@ import GuestRoute from "./components/routes/GuestRoute";
 import SignupPage from "./components/pages/SignupPage";
 import ConfirmationPage from "./components/pages/ConfirmationPage";
 import ForgotPasswordPage from "./components/pages/ForgotPasswordPage";
-// import ResetPasswordPage from "./components/pages/ResetPasswordPage";
+import ResetPasswordPage from "./components/pages/ResetPasswordPage";
 // import NewBookPage from "./components/pages/NewBookPage";
 // import TopNavigation from "./components/navigation/TopNavigation";
 
@@ -23,12 +23,7 @@ const App = ({ location }) => (
     <GuestRoute location={location} path="/signup" exact component={SignupPage} />
     <Route location={location} path="/confirmation/:token" exact component={ConfirmationPage} />
     <GuestRoute location={location} path="/forgot_password" exact component={ForgotPasswordPage} />
-    {/*<GuestRoute
-      location={location}
-      path="/reset_password/:token"
-      exact
-      component={ResetPasswordPage}
-    />*/}
+    <GuestRoute location={location} path="/reset_password/:token" exact component={ResetPasswordPage} />
     
     {/*<UserRoute
       location={location}
