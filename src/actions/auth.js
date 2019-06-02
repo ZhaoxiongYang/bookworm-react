@@ -7,22 +7,22 @@ export const userLoggedIn = user => ({
   user
 });
 
-// export const userLoggedOut = () => ({
-//   type: USER_LOGGED_OUT
-// });
+export const userLoggedOut = () => ({
+  type: USER_LOGGED_OUT
+});
 
 export const login = credentials => dispatch =>
   api.user.login(credentials).then(user => {
-    // localStorage.bookwormJWT = user.token;
+    localStorage.bookwormJWT = user.token;
     // setAuthorizationHeader(user.token);
     dispatch(userLoggedIn(user))
   });
 
-// export const logout = () => dispatch => {
-//   localStorage.removeItem("bookwormJWT");
-//   setAuthorizationHeader();
-//   dispatch(userLoggedOut());
-// };
+export const logout = () => dispatch => {
+  localStorage.removeItem("bookwormJWT");
+  // setAuthorizationHeader();
+  dispatch(userLoggedOut());
+};
 
 // export const confirm = token => dispatch =>
 //   api.user.confirm(token).then(user => {
