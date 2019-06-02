@@ -24,13 +24,7 @@ const App = ({ location, isAuthenticated }) => (
     <Route location={location} path="/confirmation/:token" exact component={ConfirmationPage} />
     <GuestRoute location={location} path="/forgot_password" exact component={ForgotPasswordPage} />
     <GuestRoute location={location} path="/reset_password/:token" exact component={ResetPasswordPage} />
-    
-    {/*<UserRoute
-      location={location}
-      path="/books/new"
-      exact
-      component={NewBookPage}
-    />*/}
+    {/*<UserRoute location={location} path="/books/new" exact component={NewBookPage} />*/}
   </div>
 );
 

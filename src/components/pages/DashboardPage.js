@@ -2,8 +2,8 @@ import React from "react";
 // import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import ConfirmEmailMessage from "../messages/ConfirmEmailMessage";
-// import { allBooksSelector } from "../../reducers/books";
-// import AddBookCtA from "../ctas/AddBookCtA";
+import { allBooksSelector } from "../../reducers/books";
+import AddBookCtA from "../ctas/AddBookCtA";
 // import { fetchBooks } from "../../actions/books";
 
 class DashboardPage extends React.Component {
@@ -12,11 +12,11 @@ class DashboardPage extends React.Component {
   // onInit = props => props.fetchBooks();
 
   render() {
-    const { isConfirmed } = this.props;
+    const { isConfirmed, books } = this.props;
     return (
       <div>
         {!isConfirmed && <ConfirmEmailMessage />}
-      {/*{books.length === 0 ? <AddBookCtA /> : <p>You have books!</p>}*/}
+      {books.length === 0 ? <AddBookCtA /> : <p>You have books!</p>}
       </div>
     );
   }
@@ -35,7 +35,7 @@ class DashboardPage extends React.Component {
 function mapStateToProps(state) {
   return {
     isConfirmed: !!state.user.confirmed,
-    // books: allBooksSelector(state)
+    books: allBooksSelector(state)
   };
 }
 
