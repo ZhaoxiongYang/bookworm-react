@@ -20,7 +20,7 @@ class SignupForm extends React.Component {
       data: { ...this.state.data, [e.target.name]: e.target.value }
     });
 
-  onSubmit = e => {
+  onSubmit = (e) => {
     e.preventDefault();
     const errors = this.validate(this.state.data);
     this.setState({ errors });
@@ -36,10 +36,8 @@ class SignupForm extends React.Component {
 
   validate = data => {
     const errors = {};
-
     if (!isEmail(data.email)) errors.email = "Invalid email";
     if (!data.password) errors.password = "Can't be blank";
-
     return errors;
   };
 
